@@ -1,0 +1,1 @@
+variable arithmtic function
