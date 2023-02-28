@@ -5,5 +5,5 @@ n=0
 
 while [ $n -lt 10 ]; do
 	echo "Best School"
-	i =$((i+1))
+	i =$((n+1))
 done
