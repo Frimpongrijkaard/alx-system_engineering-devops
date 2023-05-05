@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#it  configures an Ubuntu server.
 
 cp /etc/hosts ~/hosts.new
 sed -i "s/^127[0-9.]*\slocalhost/127.0.0.2 localhost/" ~/hosts.new
