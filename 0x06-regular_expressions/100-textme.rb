@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 # Textme
 puts ARGV[0]
-       .scan(/(?<=from:|to:|flags:).*?(?=\])/)
-       .join(',')
+       .scan(/^([+]?[a-zA-Z0-9]+)\,|([+]?[a-zA-Z0-9])+\,|.*$/)
+       .join()
