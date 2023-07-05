@@ -1,3 +1,4 @@
+#!/usr/bin/evn bash
 # creating a custom HTTP header response, but with Puppet.
 
 exec {'update':
