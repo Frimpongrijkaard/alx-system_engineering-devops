@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Configure your domain zone so that the subdomain www points to your load-balancer IP
+
+domain=$1
+subdomain=$2
+
+get_dns() {
+    script=$(dig $subdomain.$domain | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$subdomain $script" | awk '{ print "The subdomain $subdomain is a A record and points to $dest}'
+}
+
+if [ -z "$subdomain" ]; then
+    get_dns www
+    get_dns lb-01
+    get_dns web-01
+    get_dns web-02
+else
+    get_dns $subdomain
+fi
