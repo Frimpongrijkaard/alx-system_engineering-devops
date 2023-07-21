@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#a Bash script that configures the container web server nginx as nginx's user
+
+#config by replace '#user' with ngnix
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+#replace port 89 with 8080
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+#set a permission for the user
+chmod 644 /etc/nginx/nginx.conf
+#kill apache since it will interfere with nginx
+pkill apache2
+#restart the server
+sudo -u nginx service nginx start
