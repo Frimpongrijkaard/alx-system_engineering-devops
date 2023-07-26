@@ -21,11 +21,11 @@ if __name__ == '__main__':
 
     for tsk in tasks:
         if tsk.get('completed'):
-            task_done.append(tsk)
+            tasks_done.append(tsk)
             work_done += 1
 
     print("Employee {} is done with tasks({}/{}):"
           .format(employee_Name, work_done, len(tasks)))
 
-    for tsk in task_done:
+    for tsk in tasks_done:
         print("\t {}".format(tsk.get('title')))

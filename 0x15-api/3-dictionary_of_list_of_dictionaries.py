@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     dic = {}
     for user in users:
-        userid = user.get('id')
+        user_id = user.get('id')
         username = user.get('username')
         url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
         url = url + '/todos/'
