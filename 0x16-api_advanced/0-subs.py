@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
-""" this script perform extracting of number
-    of subscribers.
+"""
+this script perform extracting of number of subscribers.
 """
 import requests
 
@@ -14,8 +13,8 @@ def number_of_subscribers(subreddit):
     user_agent = {'User-agent': 'Myapp_API/0.0.1'}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     response = get(url, headers=user_agent)
-    results = response.json()
 
+    results = response.json()
     try:
         return results.get('data').get('subscribers')
 
